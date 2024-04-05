@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cibernox/ember-power-datepicker.git"
+  },
+  "license": "MIT",
+  "author": "Miguel Camba",
+  "scripts": {
+    "build": "pnpm run --filter ember-power-datepicker build",
+    "build:docs": "pnpm run --filter docs build",
+    "lint": "pnpm run --filter '*' lint",
+    "lint:fix": "pnpm run --filter '*' lint:fix",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm run --filter ember-power-datepicker start --no-watch.clearScreen",
+    "start:docs": "pnpm run --filter docs start --preserveWatchOutput",
+    "start:test-app": "pnpm run --filter test-app start"
+  },
+  "devDependencies": {
+    "@release-it-plugins/lerna-changelog": "^6.0.0",
+    "@release-it-plugins/workspaces": "^4.0.0",
+    "concurrently": "^8.2.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "release-it": "^16.3.0"
+  },
+  "workspaces": [
+    "ember-power-datepicker",
+    "test-app"
+  ],
+  "engines": {
+    "node": ">= 18"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it-plugins/workspaces": {
+        "workspaces": [
+          "ember-power-datepicker"
+        ]
+      },
+      "@release-it-plugins/lerna-changelog": {
+        "infile": "CHANGELOG.md"
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    },
+    "npm": false
+  },
+  "version": "0.12.0-beta.1"
+}
