@@ -1,18 +1,15 @@
 {
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cibernox/ember-power-datepicker.git"
-  },
+  "repository": "https://github.com/cibernox/ember-basic-dropdown",
   "license": "MIT",
   "author": "Miguel Camba",
   "scripts": {
-    "build": "pnpm run --filter ember-power-datepicker build",
+    "build": "pnpm run --filter ember-basic-dropdown build",
     "build:docs": "pnpm run --filter docs build",
     "lint": "pnpm run --filter '*' lint",
     "lint:fix": "pnpm run --filter '*' lint:fix",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "pnpm run --filter ember-power-datepicker start --no-watch.clearScreen",
+    "start:addon": "pnpm run --filter ember-basic-dropdown start --no-watch.clearScreen",
     "start:docs": "pnpm run --filter docs start --preserveWatchOutput",
     "start:test-app": "pnpm run --filter test-app start"
   },
@@ -20,12 +17,13 @@
     "@release-it-plugins/lerna-changelog": "^6.0.0",
     "@release-it-plugins/workspaces": "^4.0.0",
     "concurrently": "^8.2.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-ember-template-tag": "^1.1.0",
-    "release-it": "^16.3.0"
+    "prettier": "^3.2.5",
+    "prettier-plugin-ember-template-tag": "^2.0.1",
+    "release-it": "^17.1.1"
   },
   "workspaces": [
-    "ember-power-datepicker",
+    "ember-basic-dropdown",
+    "docs",
     "test-app"
   ],
   "engines": {
@@ -35,7 +33,7 @@
     "plugins": {
       "@release-it-plugins/workspaces": {
         "workspaces": [
-          "ember-power-datepicker"
+          "ember-basic-dropdown"
         ]
       },
       "@release-it-plugins/lerna-changelog": {
@@ -51,5 +49,10 @@
     },
     "npm": false
   },
-  "version": "0.12.0-beta.1"
+  "pnpm": {
+    "patchedDependencies": {
+      "ember-cli-fastboot@4.1.2": "patches/ember-cli-fastboot@4.1.2.patch"
+    }
+  },
+  "version": "8.0.4"
 }

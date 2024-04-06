@@ -1,1 +1,1 @@
-ember-power-datepicker/CHANGELOG.md
+ember-basic-dropdown/CHANGELOG.md

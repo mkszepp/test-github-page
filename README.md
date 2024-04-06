@@ -1,1 +1,1 @@
-ember-power-datepicker/README.md
+ember-basic-dropdown/README.md

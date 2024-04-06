@@ -4,11 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
-    sassOptions: {
-      includePaths: ['node_modules/bootstrap-sass/assets/stylesheets'],
-    },
+    'ember-cli-babel': { enableTypeScriptTransform: true },
     autoImport: {
-      watchDependencies: ['ember-power-datepicker'],
+      watchDependencies: ['ember-basic-dropdown'],
     },
   });
 

@@ -1,4 +1,4 @@
 packages:
-  - 'ember-power-datepicker'
+  - 'ember-basic-dropdown'
   - 'test-app'
   - 'docs'
