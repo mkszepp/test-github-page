@@ -7,6 +7,12 @@ on:
       - master
   pull_request: {}
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
    group: ci-${{ github.head_ref || github.ref }}
    cancel-in-progress: true
@@ -59,7 +65,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Deploy the latest documentation
+      - name: Build the latest documentation
         if: github.ref == 'refs/heads/main'
         run: pnpm build
         working-directory: 'test-app'
@@ -78,7 +84,7 @@ jobs:
           path: "./test-app/dist"
 
   deploy-documentation:
-    name: Build documentation
+    name: Deploy documentation
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
