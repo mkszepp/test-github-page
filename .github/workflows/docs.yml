@@ -91,7 +91,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./test-app/dist"
+          path: "./docs/dist"
 
   deploy-documentation:
     name: Deploy documentation
