@@ -83,7 +83,7 @@ jobs:
         run: pnpm install --frozen-lockfile
         
       - name: Run Tests
-        run: pnpm --filter docs build
+        run: pnpm --filter docs build:gh-page
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
